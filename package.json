@@ -1,36 +1,31 @@
 {
-  "name": "serialize-javascript",
-  "version": "6.0.2",
-  "description": "Serialize JavaScript to a superset of JSON that includes regular expressions and functions.",
+  "name": "isexe",
+  "version": "2.0.0",
+  "description": "Minimal module to check if a file is executable.",
   "main": "index.js",
-  "scripts": {
-    "benchmark": "node -v && node test/benchmark/serialize.js",
-    "test": "nyc --reporter=lcov mocha test/unit"
+  "directories": {
+    "test": "test"
   },
+  "devDependencies": {
+    "mkdirp": "^0.5.1",
+    "rimraf": "^2.5.0",
+    "tap": "^10.3.0"
+  },
+  "scripts": {
+    "test": "tap test/*.js --100",
+    "preversion": "npm test",
+    "postversion": "npm publish",
+    "postpublish": "git push origin --all; git push origin --tags"
+  },
+  "author": "Isaac Z. Schlueter <i@izs.me> (http://blog.izs.me/)",
+  "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yahoo/serialize-javascript.git"
+    "url": "git+https://github.com/isaacs/isexe.git"
   },
-  "keywords": [
-    "serialize",
-    "serialization",
-    "javascript",
-    "js",
-    "json"
-  ],
-  "author": "Eric Ferraiuolo <edf@ericf.me>",
-  "license": "BSD-3-Clause",
+  "keywords": [],
   "bugs": {
-    "url": "https://github.com/yahoo/serialize-javascript/issues"
+    "url": "https://github.com/isaacs/isexe/issues"
   },
-  "homepage": "https://github.com/yahoo/serialize-javascript",
-  "devDependencies": {
-    "benchmark": "^2.1.4",
-    "chai": "^4.1.0",
-    "mocha": "^10.0.0",
-    "nyc": "^15.0.0"
-  },
-  "dependencies": {
-    "randombytes": "^2.1.0"
-  }
+  "homepage": "https://github.com/isaacs/isexe#readme"
 }
